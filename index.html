@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b14">
+  <title>Zhina Apps | Discover Apps</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b14;
+      color: #f5f5ff;
+    }
+
+    header {
+      padding: 20px;
+      background: #121222;
+      border-bottom: 1px solid #292943;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #a78bfa;
+    }
+
+    header span { color: white; }
+
+    .hero {
+      text-align: center;
+      padding: 45px 18px 30px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 43px);
+      margin: 0 0 12px;
+    }
+
+    .hero h1 strong { color: #a78bfa; }
+
+    .hero p {
+      color: #aaaac4;
+      line-height: 1.6;
+    }
+
+    .search {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 24px auto 0;
+      padding: 15px;
+      border: 1px solid #393957;
+      border-radius: 12px;
+      background: #171728;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search:focus { border-color: #a78bfa; }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 10px 18px 40px;
+    }
+
+    .categories {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 10px 0 28px;
+    }
+
+    .categories button {
+      padding: 10px 15px;
+      color: #ddd9ff;
+      background: #19192b;
+      border: 1px solid #33334e;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .categories button.active,
+    .categories button:hover {
+      background: #6d4aff;
+      border-color: #6d4aff;
+      color: white;
+    }
+
+    h2 { font-size: 22px; }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .app-card {
+      background: #151525;
+      border: 1px solid #292943;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .app-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .app-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #282044;
+      font-size: 29px;
+      flex-shrink: 0;
+    }
+
+    .app-card h3 { margin: 0 0 6px; }
+    .app-card small { color: #aaaac4; }
+
+    .app-card p {
+      color: #c0c0d4;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 44px;
+    }
+
+    .download {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      background: #7655f6;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .download:hover { background: #8b70ff; }
+
+    .notice {
+      color: #aaaac4;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    #empty {
+      display: none;
+      color: #aaaac4;
+      padding: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      border-top: 1px solid #292943;
+      color: #aaaac4;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📲 Zhina <span>Apps</span></div>
+    <div>Discover something useful.</div>
+  </header>
+
+  <section class="hero">
+    <h1>Your next favourite <strong>app.</strong></h1>
+    <p>Discover apps, explore tools, and find something new.</p>
+    <input
+      id="search"
+      class="search"
+      type="search"
+      placeholder="🔍 Search apps..."
+      aria-label="Search apps"
+    >
+  </section>
+
+  <main>
+    <div class="categories" aria-label="App categories">
+      <button class="active" data-category="All">All apps</button>
+      <button data-category="Tools">Tools</button>
+      <button data-category="Education">Education</button>
+      <button data-category="Games">Games</button>
+    </div>
+
+    <h2>Explore apps</h2>
+
+    <div class="apps" id="apps">
+      <article class="app-card" data-name="zhina calculator" data-category="Tools">
+        <div class="app-top">
+          <div class="app-icon">🧮</div>
+          <div>
+            <h3>Zhina Calculator</h3>
+            <small>Tools · Your own project</small>
+          </div>
+        </div>
+        <p>A calculator project built by Zhina, with calculations and unit conversions.</p>
+        <a class="download" href="#calculator-info">App details</a>
+        <div class="notice">Add your real APK download link when it is ready.</div>
+      </article>
+
+      <article class="app-card" data-name="study buddy" data-category="Education">
+        <div class="app-top">
+          <div class="app-icon">📚</div>
+          <div>
+            <h3>Study Buddy</h3>
+            <small>Education · Sample listing</small>
+          </div>
+        </div>
+        <p>A sample listing for a future study app with revision notes and quizzes.</p>
+        <a class="download" href="#sample-info">Coming soon</a>
+        <div class="notice">This is a demo listing, not a real downloadable app.</div>
+      </article>
+
+      <article class="app-card" data-name="mini games" data-category="Games">
+        <div class="app-top">
+          <div class="app-icon">🎮</div>
+          <div>
+            <h3>Mini Games</h3>
+            <small>Games · Sample listing</small>
+          </div>
+        </div>
+        <p>A sample listing for simple games you might add in the future.</p>
+        <a class="download" href="#sample-info">Coming soon</a>
+        <div class="notice">This is a demo listing, not a real downloadable app.</div>
+      </article>
+    </div>
+
+    <p id="empty">No apps found. Try another search.</p>
+
+    <div id="calculator-info" class="notice">
+      <strong>Zhina Calculator:</strong> The listing is ready, but a working
+      download requires the actual Android APK file and its download link.
+    </div>
+
+    <div id="sample-info" class="notice">
+      Sample listings are placeholders. They do not download files.
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Zhina Apps · Built with curiosity and code.
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const cards = document.querySelectorAll(".app-card");
+    const buttons = document.querySelectorAll("[data-category]");
+    const empty = document.getElementById("empty");
+    let category = "All";
+
+    function filterApps() {
+      const query = search.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchesName = card.dataset.name.includes(query);
+        const matchesCategory =
+          category === "All" || card.dataset.category === category;
+        const show = matchesName && matchesCategory;
+
+        card.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+
+      empty.style.display = visible ? "none" : "block";
+    }
+
+    search.addEventListener("input", filterApps);
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        category = button.dataset.category;
+
+        buttons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+
+        filterApps();
+      });
+    });
+  </script>
+</body>
+</html>
